@@ -6,7 +6,7 @@
     <members>
         <member name="T:Mvc.Experiments.Api.Controllers.TestApiController">
             <summary>
-            Summary of the 'TestApi' controller
+            Summary of the 'TestApi' controller (v1)
             </summary>
         </member>
         <member name="M:Mvc.Experiments.Api.Controllers.TestApiController.GetTestMethod1(Mvc.Experiments.Api.Models.PostTestMethod1Request)">

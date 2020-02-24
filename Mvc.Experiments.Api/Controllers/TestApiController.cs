@@ -6,10 +6,10 @@ using Mvc.Experiments.Domain.Interfaces;
 namespace Mvc.Experiments.Api.Controllers
 {
     /// <summary>
-    /// Summary of the 'TestApi' controller
+    /// Summary of the 'TestApi' controller (v1)
     /// </summary>
     [ApiVersion("1.0")]
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [Produces("application/json")]
     [ApiController]
     public class TestApiController : ControllerBase

@@ -1,17 +1,17 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "Title (from swagger folder)",
-    "description": "Description (from swagger folder)",
+    "title": "Title (from 'swagger' folder)",
+    "description": "Description (from 'swagger' folder)",
     "version": "v1"
   },
   "paths": {
-    "/api/TestApi/gettest1": {
+    "/api/v1/TestApi/gettest1": {
       "post": {
         "tags": [
           "TestApi"
         ],
-        "summary": "Description of the method [1] from Symmary (xml comments) (from swagger folder)",
+        "summary": "Description of the method [1] from Symmary (xml comments) (from 'swagger' folder)",
         "requestBody": {
           "content": {
             "application/json": {
@@ -55,12 +55,12 @@
         }
       }
     },
-    "/api/TestApi/gettest2": {
+    "/api/v1/TestApi/gettest2": {
       "post": {
         "tags": [
           "TestApi"
         ],
-        "summary": "Description of the method [2] from Symmary (xml comments) (from swagger folder)",
+        "summary": "Description of the method [2] from Symmary (xml comments) (from 'swagger' folder)",
         "responses": {
           "200": {
             "description": "Success",

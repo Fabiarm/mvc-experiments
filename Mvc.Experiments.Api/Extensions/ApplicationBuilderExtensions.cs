@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System.IO;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.FileProviders;
 using Mvc.Experiments.Domain.Interfaces;
-using System.IO;
 
 namespace Mvc.Experiments.Api.Extensions
 {
@@ -47,7 +47,6 @@ namespace Mvc.Experiments.Api.Extensions
                 {
                     options.SwaggerEndpoint($"/swagger/{version}/swagger.json", $"{version}");
                 });
-
             }
             return app;
         }
