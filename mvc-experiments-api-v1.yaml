@@ -1,0 +1,63 @@
+swagger: "2.0"
+info:
+  title: Title (from swagger folder) v1
+  description: Description (from swagger folder) v1
+  version: v1
+
+basePath: /api/v1
+produces: 
+  - application/json
+consumes:
+  - application/json
+paths:
+  "/TestApi/gettest1":
+    post:
+      tags:
+      - TestApi
+      summary: 'Description of the method [1] from Symmary (xml comments) (from swagger folder) v1'
+      operationId: GetTest1
+      parameters:
+       - name: Type
+         in: body
+         required: true
+         schema:
+           $ref: '#/definitions/PostTestMethod1Request'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/PostTestMethod1Response'
+        '500':
+          description: Server Error
+          schema:
+            type: string
+  "/TestApi/gettest2":
+    get:
+      tags:
+      - TestApi
+      summary: 'Description of the method [2] from Symmary (xml comments) (from swagger folder) v1'
+      operationId: GetTest2
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/GetTestMethod2Response'
+definitions:
+    PostTestMethod1Request:
+      required:
+       - param1
+      type: object
+      properties:
+        param1:
+          type: integer
+          format: int32
+    PostTestMethod1Response:
+      type: object
+      properties:
+        result:
+          type: string
+    GetTestMethod2Response:
+      type: object
+      properties:
+        result:
+          type: string

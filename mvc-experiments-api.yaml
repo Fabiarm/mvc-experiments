@@ -1,16 +1,19 @@
 ---
 openapi: 3.0.1
 info:
-  title: Title (from swagger folder)
-  description: Description (from swagger folder)
+  title: Title (from swagger folder) v1
+  description: Description (from swagger folder) v1
   version: v1
+
+basePath: /api/v1
 paths:
-  "/api/TestApi/gettest1":
+  "/TestApi/gettest1":
     post:
       tags:
       - TestApi
       summary: Description of the method [1] from Symmary (xml comments) (from swagger
-        folder)
+        folder) v1
+      operationId: GetTest1
       requestBody:
         content:
           application/json:
@@ -35,12 +38,13 @@ paths:
             application/json:
               schema:
                 type: string
-  "/api/TestApi/gettest2":
+  "/TestApi/gettest2":
     post:
       tags:
       - TestApi
       summary: Description of the method [2] from Symmary (xml comments) (from swagger
-        folder)
+        folder) v1
+      operationId: GetTest2
       responses:
         '200':
           description: Success

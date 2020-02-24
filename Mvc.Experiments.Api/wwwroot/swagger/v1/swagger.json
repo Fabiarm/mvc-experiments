@@ -1,112 +1,97 @@
 {
-  "openapi": "3.0.1",
+  "swagger": "2.0",
   "info": {
-    "title": "Title (from 'swagger' folder)",
-    "description": "Description (from 'swagger' folder)",
+    "title": "Title (from swagger folder) v1",
+    "description": "Description (from swagger folder) v1",
     "version": "v1"
   },
+ 
+  "basePath": "/api/v1",
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
   "paths": {
-    "/api/v1/TestApi/gettest1": {
+    "/TestApi/gettest1": {
       "post": {
         "tags": [
           "TestApi"
         ],
-        "summary": "Description of the method [1] from Symmary (xml comments) (from 'swagger' folder)",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PostTestMethod1Request"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PostTestMethod1Request"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/PostTestMethod1Request"
-              }
+        "summary": "Description of the method [1] from Symmary (xml comments) (from swagger folder) v1",
+        "operationId": "GetTest1",
+        "parameters": [
+          {
+            "name": "Type",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PostTestMethod1Request"
             }
           }
-        },
+        ],
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PostTestMethod1Response"
-                }
-              }
+            "schema": {
+              "$ref": "#/definitions/PostTestMethod1Response"
             }
           },
           "500": {
             "description": "Server Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              }
+            "schema": {
+              "type": "string"
             }
           }
         }
       }
     },
-    "/api/v1/TestApi/gettest2": {
-      "post": {
+    "/TestApi/gettest2": {
+      "get": {
         "tags": [
           "TestApi"
         ],
-        "summary": "Description of the method [2] from Symmary (xml comments) (from 'swagger' folder)",
+        "summary": "Description of the method [2] from Symmary (xml comments) (from swagger folder) v1",
+        "operationId": "GetTest2",
         "responses": {
           "200": {
             "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/GetTestMethod2Response"
-                }
-              }
+            "schema": {
+              "$ref": "#/definitions/GetTestMethod2Response"
             }
           }
         }
       }
     }
   },
-  "components": {
-    "schemas": {
-      "PostTestMethod1Request": {
-        "type": "object",
-        "properties": {
-          "param1": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "PostTestMethod1Response": {
-        "type": "object",
-        "properties": {
-          "result": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "GetTestMethod2Response": {
-        "type": "object",
-        "properties": {
-          "result": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
+  "definitions": {
+    "PostTestMethod1Request": {
+      "type": "object",
+      "required": [
+        "param1"
+      ],
+      "properties": {
+        "param1": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "PostTestMethod1Response": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "type": "string"
+        }
+      }
+    },
+    "GetTestMethod2Response": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "type": "string"
+        }
       }
     }
   }

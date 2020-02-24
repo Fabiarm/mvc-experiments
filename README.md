@@ -1,7 +1,8 @@
 # Mvc.Experiments
 
 ## Goal of the current branch
-Demostrate 2 modes when your system has the version:
+Demostrate generated abstract contract using NSwag Studio.
+Demostrate 2 modes when your system has the version using contract:
 - Autogenerate 'swagger.json' file;
 - Use 'swagger.json' file in 'wwwroot/swagger' folder;
 
