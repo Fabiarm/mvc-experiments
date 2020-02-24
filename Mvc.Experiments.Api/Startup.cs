@@ -39,7 +39,7 @@ namespace Mvc.Experiments.Api
             services.AddBusinessServices();
 
             // Add swagger configuration
-            services.AddSwaggerConfiguration(configSettings, 1);
+            services.AddSwaggerConfiguration(configSettings);
             services.AddControllers();
         }
 

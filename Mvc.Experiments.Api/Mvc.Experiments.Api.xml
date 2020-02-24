@@ -4,28 +4,54 @@
         <name>Mvc.Experiments.Api</name>
     </assembly>
     <members>
-        <member name="M:Mvc.Experiments.Api.Controllers.TestApiControllerBase.Gettest1(Mvc.Experiments.Api.Controllers.PostTestMethod1Request)">
+        <member name="M:Mvc.Experiments.Api.Controllers.V1.TestApiControllerBase.Gettest1(Mvc.Experiments.Api.Controllers.V1.PostTestMethod1Request)">
             <summary>Description of the method [1] from Symmary (xml comments) (from swagger folder) v1</summary>
             <returns>Success</returns>
         </member>
-        <member name="M:Mvc.Experiments.Api.Controllers.TestApiControllerBase.Gettest2">
+        <member name="M:Mvc.Experiments.Api.Controllers.V1.TestApiControllerBase.Gettest2">
             <summary>Description of the method [2] from Symmary (xml comments) (from swagger folder) v1</summary>
             <returns>Success</returns>
         </member>
-        <member name="T:Mvc.Experiments.Api.Controllers.TestApiController">
+        <member name="T:Mvc.Experiments.Api.Controllers.V1.TestApiControllerV1">
             <summary>
             Summary of the 'TestApi' controller (v1)
             </summary>
+            
         </member>
-        <member name="M:Mvc.Experiments.Api.Controllers.TestApiController.Gettest1(Mvc.Experiments.Api.Controllers.PostTestMethod1Request)">
+        <member name="M:Mvc.Experiments.Api.Controllers.V1.TestApiControllerV1.Gettest1(Mvc.Experiments.Api.Controllers.V1.PostTestMethod1Request)">
             <summary>
             Description of the method [1] from Symmary (xml comments) locally v1
             </summary>
             <returns>string</returns>
         </member>
-        <member name="M:Mvc.Experiments.Api.Controllers.TestApiController.Gettest2">
+        <member name="M:Mvc.Experiments.Api.Controllers.V1.TestApiControllerV1.Gettest2">
             <summary>
             Description of the method [2] from Symmary (xml comments) locally v1
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="M:Mvc.Experiments.Api.Controllers.V2.TestApiControllerBase.Gettest1(Mvc.Experiments.Api.Controllers.V2.PostTestMethod1Request)">
+            <summary>Description of the method [1] from Symmary (xml comments) (swagger folder) v2</summary>
+            <returns>Success</returns>
+        </member>
+        <member name="M:Mvc.Experiments.Api.Controllers.V2.TestApiControllerBase.Gettest2">
+            <summary>Description of the method [2] from Symmary (xml comments) (swagger folder) v2</summary>
+            <returns>Success</returns>
+        </member>
+        <member name="T:Mvc.Experiments.Api.Controllers.V2.TestApiControllerV2">
+            <summary>
+            Summary of the 'TestApi' controller (v2)
+            </summary>
+        </member>
+        <member name="M:Mvc.Experiments.Api.Controllers.V2.TestApiControllerV2.Gettest1(Mvc.Experiments.Api.Controllers.V2.PostTestMethod1Request)">
+            <summary>
+            Description of the method [1] from Symmary (xml comments) locally v2
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="M:Mvc.Experiments.Api.Controllers.V2.TestApiControllerV2.Gettest2">
+            <summary>
+            Description of the method [2] from Symmary (xml comments) locally v2
             </summary>
             <returns>string</returns>
         </member>

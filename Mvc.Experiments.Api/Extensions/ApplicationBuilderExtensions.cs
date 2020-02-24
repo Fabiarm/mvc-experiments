@@ -12,7 +12,8 @@ namespace Mvc.Experiments.Api.Extensions
         {
             if (configSettings.Swagger.EnableSwagger == true)
             {
-                string version = "v1";
+                string version1 = "v1";
+                string version2 = "v2";
 
                 if (configSettings.Swagger.EnableAutogenerateFile == true)
                 {
@@ -45,7 +46,8 @@ namespace Mvc.Experiments.Api.Extensions
                 // specifying the Swagger JSON endpoint.
                 app.UseSwaggerUI(options =>
                 {
-                    options.SwaggerEndpoint($"/swagger/{version}/swagger.json", $"{version}");
+                    options.SwaggerEndpoint($"/swagger/{version1}/swagger.json", $"{version1}");
+                    options.SwaggerEndpoint($"/swagger/{version2}/swagger.json", $"{version2}");
                 });
             }
             return app;

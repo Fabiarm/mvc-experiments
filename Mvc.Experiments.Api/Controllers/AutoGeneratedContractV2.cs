@@ -12,20 +12,20 @@ using Microsoft.AspNetCore.Mvc;
 #pragma warning disable 1573 // Disable "CS1573 Parameter '...' has no matching param tag in the XML comment for ...
 #pragma warning disable 1591 // Disable "CS1591 Missing XML comment for publicly visible type or member ..."
 
-namespace Mvc.Experiments.Api.Controllers
+namespace Mvc.Experiments.Api.Controllers.V2
 {
     using System = global::System;
 
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.2.3.0 (NJsonSchema v10.1.5.0 (Newtonsoft.Json v12.0.0.0))")]
-    [Microsoft.AspNetCore.Mvc.Route("api/v1")]
+    [Microsoft.AspNetCore.Mvc.Route("api/v2")]
     public abstract class TestApiControllerBase : ControllerBase
     {
-        /// <summary>Description of the method [1] from Symmary (xml comments) (from swagger folder) v1</summary>
+        /// <summary>Description of the method [1] from Symmary (xml comments) (swagger folder) v2</summary>
         /// <returns>Success</returns>
         [Microsoft.AspNetCore.Mvc.HttpPost, Microsoft.AspNetCore.Mvc.Route("TestApi/gettest1")]
         public abstract System.Threading.Tasks.Task<PostTestMethod1Response> Gettest1([Microsoft.AspNetCore.Mvc.FromBody] [Microsoft.AspNetCore.Mvc.ModelBinding.BindRequired] PostTestMethod1Request type);
 
-        /// <summary>Description of the method [2] from Symmary (xml comments) (from swagger folder) v1</summary>
+        /// <summary>Description of the method [2] from Symmary (xml comments) (swagger folder) v2</summary>
         /// <returns>Success</returns>
         [Microsoft.AspNetCore.Mvc.HttpGet, Microsoft.AspNetCore.Mvc.Route("TestApi/gettest2")]
         public abstract System.Threading.Tasks.Task<GetTestMethod2Response> Gettest2();
@@ -37,6 +37,9 @@ namespace Mvc.Experiments.Api.Controllers
     {
         [Newtonsoft.Json.JsonProperty("param1", Required = Newtonsoft.Json.Required.Always)]
         public int Param1 { get; set; }
+
+        [Newtonsoft.Json.JsonProperty("param2", Required = Newtonsoft.Json.Required.Always)]
+        public int Param2 { get; set; }
 
 
     }
