@@ -30,8 +30,11 @@ namespace Mvc.Experiments.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IConfigSettings>(configSettings);
-            services.AddApiVersioningSettings();
+            services.AddApiVersioningSettings(configSettings);
             services.AddBusinessServices();
+
+            services.AddSwaggerConfiguration(configSettings, 1);
+            services.AddControllers();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -42,9 +45,12 @@ namespace Mvc.Experiments.Api
             }
 
             app.UseHttpsRedirection();
-            app.UseRouting();
           
             app.UseApiVersioning();
+
+            app.UseApiSwaggerConfiguration(configSettings);
+
+            app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {

@@ -1,4 +1,5 @@
 ﻿using Mvc.Experiments.Domain.Interfaces;
+using System;
 
 namespace Mvc.Experiments.Domain.Services
 {
@@ -8,9 +9,18 @@ namespace Mvc.Experiments.Domain.Services
         {
 
         }
-        public string GetTestMethod1()
+        public string GetTestMethod1(int param1)
         {
-            return "Hello [Test method 1]!";
+            if (param1 <= 0)
+            {
+                throw new ArgumentOutOfRangeException($"{nameof(param1)} should be positive.");
+            }
+            return $"Hello [Test method 1] with param value:{param1}!";
+        }
+
+        public string GetTestMethod2()
+        {
+            return $"Hello [Test method 2]!";
         }
     }
 }

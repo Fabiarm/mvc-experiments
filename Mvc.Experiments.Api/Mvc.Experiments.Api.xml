@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Mvc.Experiments.Api</name>
+    </assembly>
+    <members>
+        <member name="T:Mvc.Experiments.Api.Controllers.TestApiController">
+            <summary>
+            Summary of the 'TestApi' controller
+            </summary>
+        </member>
+        <member name="M:Mvc.Experiments.Api.Controllers.TestApiController.GetTestMethod1(Mvc.Experiments.Api.Models.PostTestMethod1Request)">
+            <summary>
+            Description of the method [1] from Symmary (xml comments) locally
+            </summary>
+            <returns>string</returns>
+        </member>
+        <member name="M:Mvc.Experiments.Api.Controllers.TestApiController.GetTestMethod2">
+            <summary>
+            Description of the method [2] from Symmary (xml comments) locally
+            </summary>
+            <returns>string</returns>
+        </member>
+    </members>
+</doc>

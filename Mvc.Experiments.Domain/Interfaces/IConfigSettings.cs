@@ -4,6 +4,6 @@ namespace Mvc.Experiments.Domain.Interfaces
 {
     public interface IConfigSettings
     {
-        SwaggerSettings Swagger { get; set; }
+        public SwaggerSettings Swagger { get; set; }
     }
 }

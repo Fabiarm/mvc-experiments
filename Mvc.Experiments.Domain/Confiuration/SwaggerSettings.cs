@@ -2,7 +2,7 @@
 {
     public class SwaggerSettings
     {
-        bool EnableSwagger { get; set; }
-        bool EnableAutogenerateFile { get; set; }
+        public bool EnableSwagger { get; set; }
+        public bool EnableAutogenerateFile { get; set; }
     }
 }

@@ -1,9 +1,15 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Mvc.Experiments.Api.Models;
 using Mvc.Experiments.Domain.Interfaces;
 
 namespace Mvc.Experiments.Api.Controllers
 {
+    /// <summary>
+    /// Summary of the 'TestApi' controller
+    /// </summary>
+    [ApiVersion("1.0")]
     [Route("api/[controller]")]
     [Produces("application/json")]
     [ApiController]
@@ -15,12 +21,39 @@ namespace Mvc.Experiments.Api.Controllers
             _testService = testService;
         }
 
-        [HttpGet]
+        /// <summary>
+        /// Description of the method [1] from Symmary (xml comments) locally
+        /// </summary>
+        /// <returns>string</returns>
+        [HttpPost]
         [Route("gettest1")]
-        public async Task<string> GetTestMethod1()
+        [ProducesResponseType(200)]
+        [ProducesResponseType(500, Type = typeof(string))]
+        public async Task<PostTestMethod1Response> GetTestMethod1(PostTestMethod1Request request)
         {
-            var result = _testService.GetTestMethod1();
-            return await Task.FromResult(result);
+            var result = _testService.GetTestMethod1(request.Param1);
+            return await Task.FromResult(
+                new PostTestMethod1Response()
+                {
+                    Result = result
+                });
+        }
+
+        /// <summary>
+        /// Description of the method [2] from Symmary (xml comments) locally
+        /// </summary>
+        /// <returns>string</returns>
+        [HttpPost]
+        [Route("gettest2")]
+        [ProducesResponseType(200)]
+        public async Task<GetTestMethod2Response> GetTestMethod2()
+        {
+            var result = _testService.GetTestMethod2();
+            return await Task.FromResult(
+                new GetTestMethod2Response()
+                {
+                    Result = result
+                });
         }
 
     }
