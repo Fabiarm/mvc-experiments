@@ -14,7 +14,7 @@ paths:
     post:
       tags:
       - TestApi
-      summary: 'Description of the method [1] from Symmary (xml comments) (from swagger folder) v1'
+      summary: 'Description of the method [1] from Symmary (xml comments) (swagger folder) v1'
       operationId: GetTest1
       parameters:
        - name: Type
@@ -35,7 +35,7 @@ paths:
     get:
       tags:
       - TestApi
-      summary: 'Description of the method [2] from Symmary (xml comments) (from swagger folder) v1'
+      summary: 'Description of the method [2] from Symmary (xml comments) (swagger folder) v1'
       operationId: GetTest2
       responses:
         '200':
