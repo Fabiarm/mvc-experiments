@@ -1,13 +1,8 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.FileProviders;
-using Microsoft.OpenApi.Models;
 using Mvc.Experiments.Domain.Interfaces;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Mvc.Experiments.Api.Extensions
 {
@@ -18,34 +13,41 @@ namespace Mvc.Experiments.Api.Extensions
             if (configSettings.Swagger.EnableSwagger == true)
             {
                 string version = "v1";
-                /*
-                app.UseStaticFiles(new StaticFileOptions()
-                {
-                    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @$"wwwroot\swagger")),
-                    RequestPath = new PathString($"/swagger")
-                });
-                */
 
                 if (configSettings.Swagger.EnableAutogenerateFile == true)
                 {
+                    // Enable middleware to serve generated Swagger as a JSON endpoint.
                     app.UseSwagger();
-                    app.UseSwaggerUI(options =>
-                    {
-                        options.SwaggerEndpoint($"/swagger/{version}/swagger.json", $"{version}");
-                    });
                 }
                 else
                 {
-                    app.UseSwagger(options =>
+                    // Disable response cache (optional point)
+                    app.UseStaticFiles(new StaticFileOptions()
                     {
-                        options.RouteTemplate = "/swagger/{documentName}/swagger.json";
-                        options.PreSerializeFilters.Add((swaggerDoc, httpReq) =>
+                        OnPrepareResponse = context =>
                         {
-                            swaggerDoc.Servers = new List<OpenApiServer> {
-                            new OpenApiServer { Url = $"{httpReq.Scheme}://{httpReq.Host.Value}/api/{version}" } };
-                        });
+                            context.Context.Response.Headers.Add("Cache-Control", "no-cache, no-store");
+                            context.Context.Response.Headers.Add("Expires", "-1");
+                        }
                     });
+                    // Give an access to 'swagger' folder on 'wwwroot'
+                    app.UseStaticFiles(new StaticFileOptions()
+                    {
+                        FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @$"wwwroot\swagger")),
+                        RequestPath = new PathString($"/swagger")
+                    });
+
+                    // Enable middleware to serve generated Swagger as a JSON endpoint.
+                    app.UseSwagger();
                 }
+
+                // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+                // specifying the Swagger JSON endpoint.
+                app.UseSwaggerUI(options =>
+                {
+                    options.SwaggerEndpoint($"/swagger/{version}/swagger.json", $"{version}");
+                });
+
             }
             return app;
         }

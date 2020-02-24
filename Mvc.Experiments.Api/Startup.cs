@@ -22,7 +22,6 @@ namespace Mvc.Experiments.Api
             Configuration = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json", optional: false)
                 .AddJsonFile($"appsettings.{environment.EnvironmentName}.json", optional: false)
-                .AddEnvironmentVariables()
                 .Build();
 
             configSettings = Configuration.GetSection("App-Configuration").Get<ConfigSettings>();
@@ -30,9 +29,12 @@ namespace Mvc.Experiments.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IConfigSettings>(configSettings);
+
+            // Add versioning
             services.AddApiVersioningSettings(configSettings);
             services.AddBusinessServices();
 
+            // Add swagger configuration
             services.AddSwaggerConfiguration(configSettings, 1);
             services.AddControllers();
         }
