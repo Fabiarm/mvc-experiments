@@ -7,7 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mvc.Experiments.Domain", "M
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mvc.Experiments.Core", "Mvc.Experiments.Core\Mvc.Experiments.Core.csproj", "{D9AD4FA0-BB23-4FDD-A7CC-2C50F9375ED2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvc.Experiments.Api", "Mvc.Experiments.Api\Mvc.Experiments.Api.csproj", "{869DAE4E-BF4E-438E-93F5-DF78D661E561}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mvc.Experiments.Api", "Mvc.Experiments.Api\Mvc.Experiments.Api.csproj", "{869DAE4E-BF4E-438E-93F5-DF78D661E561}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{79CD2DCC-C9D8-4F01-A9B6-724DB33DD40B}"
+	ProjectSection(SolutionItems) = preProject
+		mvc-experiments-api.yaml = mvc-experiments-api.yaml
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
